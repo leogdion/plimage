@@ -10,13 +10,14 @@ require.config({
 define(['PlImage'], function (PlImage) {
 	PlImage.load(
 		['images/0.gif','images/1.gif','images/2.gif','images/3.gif',
-		'images/4.png','images/5.png','images/6.png','images/7.png','images/8.png'],
+		'images/4.png','images/5.png','images/6.png','images/7.png','images/8.png', 'errorFile'],
 		{
-			each : function (item, progress) {
+			each : function (error, item, progress) {
 				console.log(item);
 			},
 			done : function (error) {
 				console.log(error);
-			}
+			},
+			allowErrors : false
 		})
 });
